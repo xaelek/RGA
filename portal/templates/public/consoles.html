@@ -1,0 +1,10 @@
+{% extends "public/base.html" %}
+
+{% block body %}
+<div class="container">	
+	<h1>Consoles</h1>
+	{% with itemList=consoleList path="consoles" templateName="public/listItems.html" %}
+	{% include templateName %}
+	{% endwith %}
+</div>	
+{% endblock %}

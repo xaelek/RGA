@@ -1,0 +1,13 @@
+{% extends "public/base.html" %}
+
+{% block body %}
+<div class="container">
+	<h1>{{ console.name }}</h1>
+	{{ console.description }}
+	</br>
+	Games
+	{% with itemList=gameList.all path="games" templateName="public/listItems.html" %}
+	{% include templateName %}
+	{% endwith %}
+</div>	
+{% endblock %}

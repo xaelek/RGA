@@ -1,0 +1,13 @@
+{% extends "public/base.html" %}
+
+{% block body %}
+<div class="container">
+	<h1>{{ game.name }}</h1>
+	{{ game.description }}
+	</br>
+	Achievements
+	{% with itemList=achievementsList path="achievements" templateName="public/listItems.html" %}
+	{% include templateName %}
+	{% endwith %}
+</div>
+{% endblock %}

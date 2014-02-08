@@ -1,0 +1,10 @@
+{% extends "public/base.html" %}
+
+{% block body %}
+<div class="container">	
+	<h1>Games</h1>
+	{% with itemList=gameList path="games" templateName="public/listItems.html" %}
+	{% include templateName %}
+	{% endwith %}
+</div>
+{% endblock %}
