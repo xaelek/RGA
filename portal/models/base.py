@@ -1,4 +1,5 @@
 import re
+import string
 
 from datetime import datetime
 
@@ -16,5 +17,7 @@ class BaseModel(models.Model):
 		abstract = True
 
 	def getIcon(self):
-		iconPath = settings.IMAGE_PATH + re.sub(r'\W+', '', self.name) + settings.IMAGE_EXTENSION
+		iconPath = (settings.IMAGE_PATH + 
+					self.__class__.__name__.lower() + "s" + "/" + re.sub(r'[^\w\s]', '', self.name) + 
+					settings.IMAGE_EXTENSION)
 		return iconPath
